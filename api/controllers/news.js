@@ -24,12 +24,12 @@ const getOneNewsController = (req, res, next) => {
     .then((data) => {
       if (data) {
         res.status(200).json({
-          message: "Contact Found",
+          message: "News Found",
           data,
         });
       } else {
         res.status(404).json({
-          message: "Contact Not Found",
+          message: "News Not Found",
           id,
         });
       }
@@ -56,7 +56,7 @@ const createNewsController = (req, res, next) => {
     .save()
     .then((data) => {
       res.status(201).json({
-        message: "Contact Created",
+        message: "News Created",
         data,
       });
     })
@@ -80,7 +80,7 @@ const updateNewsController = (req, res, next) => {
     .then((data) => {
       News.findById(id).then((newData) => {
         res.status(200).json({
-          message: "Contact Updated",
+          message: "News Updated",
           newData,
         });
       });
